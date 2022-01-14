@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'category',
+    'e_commerce',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
