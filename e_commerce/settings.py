@@ -126,6 +126,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIR = [
     'e_commerce/static',
 ]
+#media files config
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
