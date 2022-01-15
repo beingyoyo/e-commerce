@@ -1,6 +1,5 @@
 from multiprocessing import context
 from django.shortcuts  import render
-
 from store.models import Product
 
 def home(request):
@@ -8,5 +7,4 @@ def home(request):
     context = {
         'products' : products,
     }
-    return render(request, 'home.html', context)
-    #return render(request, template_name= "home.html", context=context)
+    return render(request, template_name= "home.html", context=context)
