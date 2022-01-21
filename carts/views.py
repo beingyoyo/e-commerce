@@ -33,6 +33,11 @@ def _cart_id(request):
     return cart
 
 def add_cart(request, product_id):
+    color = request.GET['color']
+    size = request.GET['size']
+    return HttpResponse(color + '' + size)
+    exit()
+
     product = Product.objects.get(id = product_id) #Get the product
     try:
         cart = Cart.objects.get(cart_id = _cart_id(request)) #Get the cart using the cart_id present in the session
@@ -51,7 +56,6 @@ def add_cart(request, product_id):
             product = product,
             quantity = 1,
             cart = cart,
-
         )
         cart_item.save()
     return redirect('cart')
