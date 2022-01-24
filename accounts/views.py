@@ -23,7 +23,7 @@ def register(request):
             user.phone_number = phone_number
             user.save()
     else:
-        form = RegistrationForm() 
+        form = RegistrationForm()  
     
     context = {
         'form' : form
