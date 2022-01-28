@@ -81,6 +81,9 @@ def logout(request):
 def dashboard(request):
     return render(request, template_name='accounts/dashboard.html')
 
+def forgotpassword(request):
+    return render(request, 'accounts/forgotpassword.html')
+
 def activate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
