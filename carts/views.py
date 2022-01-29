@@ -115,7 +115,7 @@ def remove_cart_item(request, product_id, cart_item_id):
     cart_item.delete()
     return redirect('cart')
 
-#@login_required(login_url='login')
+@login_required(login_url='login')
 def checkout(request, total = 0, quantity = 0, cart_items = None):
     try:
         cart = Cart.objects.get(cart_id = _cart_id(request))
@@ -124,6 +124,7 @@ def checkout(request, total = 0, quantity = 0, cart_items = None):
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
         tax = (5 *  total)/100
+        grand_total = 0
         grand_total = tax + total
     except ObjectDoesNotExist:
         pass
