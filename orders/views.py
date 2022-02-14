@@ -127,4 +127,6 @@ def place_order(request, total = 0, quantity = 0):
             return redirect('checkout')
 
 def order_complete(request):
+    order_number = request.GET.get('order_number')
+    transID = request.GET.get('payment_id')
     return render(request, 'orders/order_complete.html')
